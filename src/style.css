@@ -5,6 +5,44 @@
     list-style-type: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+html {
+    font-size: 100%; /* Defaults to 16px in most browsers but maintains user customization */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     all: unset;
+}
+
+.website {
+    position: relative;
+}
+
+.homepage {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 1.5rem;
+}
+
+.reference-image {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    opacity: var(--opacity, 1); /* Defaults to 1 if not set */
+}
+
+.header-portrait-container {
+    max-width: 300px;
+}
+
+.header-portrait {
+    width: 100%;
+    height: auto;
 }

@@ -1,11 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-   </head>
-<body>
-
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homepage</title>
+    </head>
+    <body>
+        <picture class="reference-image-container">
+            <source srcset="./assets/img/portfolio.png" media="(min-width: 1000px)" />
+            <source srcset="./assets/img/portfolio-tablet.png" media="(min-width: 600px)" />
+            <img class="reference-image" src="./assets/img/portfolio-mobile.png" alt="" />
+        </picture>
+        <div class="website">
+            <div class="homepage">
+                <main>
+                    <header>
+                        <div class="header-portrait-container">
+                            <img
+                                src="./assets/img/header-portrait.jpg"
+                                alt="A professional-looking black woman typing on a laptop."
+                                class="header-portrait"
+                            />
+                        </div>
+                    </header>
+                    <section class="my-work"></section>
+                    <footer></footer>
+                </main>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('keydown', (e) => {
+                if (e.key >= '0' && e.key <= '9') {
+                    let opacity = e.key / 10;
+                    const container = document.querySelector('.reference-image-container');
+                    container.style.setProperty('--opacity', opacity);
+                }
+            });
+        </script>
+    </body>
 </html>

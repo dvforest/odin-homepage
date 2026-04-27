@@ -32,17 +32,47 @@ h6 {
     position: absolute;
     top: 0%;
     left: 0%;
-    z-index: -1;
+    z-index: -2;
     width: 100%;
     height: auto;
     opacity: var(--opacity, 1); /* Defaults to 1 if not set */
 }
 
-.header-portrait-container {
-    max-width: 300px;
+header {
+    position: relative;
+    width: 100vw;
 }
 
-.header-portrait {
+header > figure {
+    max-width: 300px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.header-figure-image {
     width: 100%;
     height: auto;
+}
+
+.header-figure-caption {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding-bottom: 0.5rem;
+    color: white;
+    font-size: 4.5rem;
+}
+
+.skewed-decoration {
+    transform: skewY(-30deg) translateY(-30%);
+    transform-origin: top center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    background-color: #209ab8;
 }

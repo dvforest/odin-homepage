@@ -25,7 +25,6 @@ h6 {
 .homepage {
     display: flex;
     justify-content: center;
-    padding: 1.5rem 1.5rem;
 }
 
 .reference-image {
@@ -41,18 +40,21 @@ h6 {
 header {
     position: relative;
     width: 100vw;
+    padding: 5%;
 }
 
 header > figure {
     max-width: 300px;
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-figure-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .header-figure-caption {
@@ -62,12 +64,12 @@ header > figure {
     transform: translate(-50%, 0%);
     padding-bottom: 0.5rem;
     color: white;
-    font-size: 4.5rem;
+    font-size: clamp(1rem, 20vw, 3.5rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .skewed-decoration {
-    transform: skewY(-30deg) translateY(-30%);
-    transform-origin: top center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 250px), 0% 100%);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -75,4 +77,32 @@ header > figure {
     left: 0%;
     z-index: -1;
     background-color: #209ab8;
+}
+
+/* Tablet only*/
+@media (600px <= width <= 1000px) {
+    .header-figure-caption {
+        top: 7%;
+        right: 7%;
+        left: auto;
+        bottom: auto;
+        position: fixed;
+        transform: translate(0%, 0%);
+    }
+}
+
+/* Tablet and Laptop */
+@media (min-width: 600px) {
+    header > figure {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .header-figure-image {
+        transform: translateY(-80px);
+    }
+
+    .header-figure-caption {
+        width: max-content;
+    }
 }
